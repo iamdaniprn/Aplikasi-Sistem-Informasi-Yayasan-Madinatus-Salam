@@ -1,0 +1,285 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/*--reset--*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/*--start editing from here--*/
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*--end reset--*/
+body{
+	font-family: 'Squada One', cursive;
+	background-size:cover;
+	background-attachment: fixed;
+}
+/*-- main --*/
+.main {
+    margin: 8em auto 0;
+    width: 23%;
+    background-color: #fff;
+    padding: 3em;
+    border: 1px;
+}
+h1 {
+    font-size: 2em;
+    text-align: center;
+	font-family: 'Squada One', cursive;
+}
+.signin-form {
+    padding-top:3em;
+}
+.signin-form input[type="text"], .signin-form input[type="password"] {
+    width: 85%;
+    padding: .8em 3em .8em 1em;
+    font-size: 0.8em;
+    margin: 1em 0;
+    outline: none;
+    color: #999;
+    border: 2px solid #e3e3e3;
+    border-radius: 3px;
+}
+.signin-form input[type="text"] {
+    background: url(../images/1.png)no-repeat 97% center;
+    display: block;
+}
+.signin-form input[type="password"] {
+    background: url(../images/2.png)no-repeat 97% center;
+    display: block;
+}
+.signin-form input[type="submit"] {
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa84c+31,ff7b0d+60 */
+background: rgb(30,144,255); /* Old browsers */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.signin-form input[type="submit"]:hover {
+    color: #000000;
+    background: rgb(245,246,246);
+    background: -moz-linear-gradient(-45deg, rgba(245,246,246,1) 0%, rgba(219,220,226,1) 21%, rgba(184,186,198,1) 49%, rgba(221,223,227,1) 80%, rgba(245,246,246,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+    background: linear-gradient(135deg, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=1 );
+	transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+
+.text-left {
+    float: left;
+    width: 55%;
+	text-align:center;
+}
+.text-right  {
+    float: right;
+    width: 45%;
+}
+.signin-text {
+    margin-top: 1.5em;
+}
+.signin-text p {
+    font-size: .9em;
+}
+.signin-text p  a{
+	color:#999;
+}
+.signin-text p  a:hover{
+	color:#000;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+h5 {
+    text-align: center;
+    font-size: 1em;
+    margin: 2.5em auto;
+    background-color: #EF781F;
+    color: #fff;
+}
+.social-icons {
+    display: block;
+    text-align: center;
+}
+.social-icons ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.social-icons a {
+    background: url(../images/sprite.png)no-repeat 0px 0px;
+    display: block;
+    width: 33px;
+    height: 30px;
+    transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.social-icons a:hover {
+    transform: rotatey(360deg);
+}
+.social-icons a.fb{
+	background:url(../images/sprite.png)no-repeat 0px -35px;
+}
+.social-icons a.be{
+	background:url(../images/sprite.png)no-repeat 0px -69px;
+}
+.social-icons a.gg{
+	background:url(../images/sprite.png)no-repeat 0px -105px;
+}
+.copyright {
+    margin: 3em 0 2em;
+    text-align: center;
+}
+.copyright p {
+    font-size: 1.2em;
+    color: #fff;
+}
+.copyright p a{
+    color: #fff;
+}
+.copyright p a:hover{
+    color: #EF781F;
+}
+/*---- responsive-design -----*/
+@media(max-width:1440px){
+body{
+    background-position: center;
+}
+.signin-form input[type="text"], .signin-form input[type="password"] {
+    width: 83%;
+}
+}
+@media(max-width:1366px){
+.main {
+    margin: 6em auto 0;
+	padding: 2.5em 2em;
+}
+.signin-form {
+    padding-top: 2em;
+}
+}
+@media(max-width:1080px){
+.main {
+    padding: 2.5em 2em 2em;
+    width: 30%;
+}
+}
+@media(max-width:1024px){
+.main {
+    padding: 2em;
+    margin: 5em auto 0;
+}
+h5 {
+    margin: 2em auto;
+}
+}
+@media(max-width:768px){
+.main {
+    padding: 2em;
+    margin: 4em auto 0;
+    width: 40%;
+}
+.signin-form {
+    padding-top: 1em;
+}
+.copyright p {
+    font-size: 1em;
+}
+.signin-form input[type="submit"] {
+    padding: 0.6em 0;
+    font-size: 0.9em;
+    margin-top: 0.6em;
+}
+h5 {
+    margin: 1.5em auto 2em;
+}
+.copyright {
+    margin: 3em 0;
+}
+}
+@media(max-width:640px){
+h1 {
+    font-size: 1.8em;
+}
+.main {
+    margin: 5em auto 0;
+    width: 47%;
+}
+}
+@media(max-width:480px){
+.main {
+    margin: 4em auto 0;
+    width: 54%;
+}
+.signin-form input[type="text"], .signin-form input[type="password"] {
+    width: 79%;
+}
+}
+@media(max-width:320px){
+h1 {
+    font-size: 1.5em;
+}
+.main {
+    margin: 2.5em auto 0;
+    width: 73%;
+    padding: 2em 1.5em 1.5em;
+}
+.signin-form input[type="text"], .signin-form input[type="password"] {
+    width: 78%;
+    font-size: 0.7em;
+}
+.signin-form input[type="submit"] {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+.signin-text p {
+    font-size: .85em;
+}
+.text-left {
+    width: 45%;
+}
+.text-right {
+    width: 47%;
+}
+.copyright {
+    margin: 2em 1em;
+    line-height: 1.5em;
+}
+.copyright p {
+    font-size: 0.9em;
+}
+}
+/*--//responsive-design---*/

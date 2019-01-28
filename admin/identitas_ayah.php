@@ -1,0 +1,183 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+header('location:index.html'); }
+else { $username = $_SESSION['username']; }
+require_once("koneksi.php");
+
+$query = mysql_query("SELECT * FROM admin WHERE username = '$username'");
+$hasil = mysql_fetch_array($query);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Sistem Informasi Yayasan Madinatus Salam </title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <!-- Page-Level CSS -->
+    <link href="assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../gambar/logo.jpg" />
+</head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <?php
+                Include('header.php');
+            ?>
+            <!-- end navbar-header -->
+
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <?php
+            Include('menu.php');
+        ?>
+        <!-- end navbar side -->
+        
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Edit Identitas Ayah</h1>
+                </div>
+                <!--End Page Header -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Edit Identitas Ayah
+                        </div>
+                            <div class="panel-body">
+                                <div class="col-md-8">
+                                <?php
+                                    Include('koneksi.php');
+                                    $user=$_GET['id'];
+                                    $sql=mysql_query("select * from identitas_ayah where id_santri='$user'");
+                                    while($row=mysql_fetch_array($sql)){
+                                ?>
+                                    <form enctype="multipart/form-data" action="upload_identitas_ayah.php" method="post">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id_santri" size="120" value="<?php echo $row['id_santri']?>" />
+                                    </div>
+                                    <table class="table table-sm">
+                                      <tbody>
+                                        <tr>
+                                          <td><label>Nama Lengkap</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="nama_ayah" size="70" class="form-control" value="<?php echo $row['nama_ayah']?>"></td>
+                                        </tr>
+                                        <tr>
+                                          <td><label>Tempat Lahir</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="tempat_lahir" size="70" class="form-control" value="<?php echo $row['tempat_lahir']?>"></td>
+                                        </tr>
+                                        <tr>
+                                          <td><label>Tanggal Lahir</label></td>
+                                          <td>:</td>
+                                          <td>
+                                              <select class="form-control" name="tanggal">
+                                                <option value="">-pilih tanggal-</option>
+                                               <?php for($hari=1; $hari<=31; $hari++){ ?>
+                                                <option value="<?php echo $hari; ?>">
+                                                    <?php echo $hari; ?>
+                                                </option>
+                                                <?php  } ?>
+                                            </select>
+                                            <select class="form-control" name="bulan">
+                                                <option value="">-pilih bulan-</option>
+                                                <?php
+                                                    $bulan = array("Januari" , "Februari" , "Maret" , "April" , "Mei" , "Juni" , "Juli" , "Agustus" , "September" , "Oktober" , "Novermber" , "Desember");
+                                                    foreach ($bulan as $newbulan) {
+                                                    echo "<option value=$newbulan> $newbulan </option>";
+                                                    }
+                                                ?>
+                                            </select>
+                                            <select class="form-control" name="tahun">
+                                                <option value="">-pilih tahun-</option>
+                                                <?php
+                                                    for($i=1900;$i<=2017;$i++){
+                                                    echo "<option value=$i> $i </option>";
+                                                    }
+                                                ?>
+                                            </select>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td><label>Agama</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="agama" size="70" class="form-control" value="<?php echo $row['agama']?>"></td>
+                                        </tr>
+                                        <tr>
+                                          <td><label>Kewarganegaraan</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="kewarganegaraan" size="70" class="form-control" value="<?php echo $row['kewarganegaraan']?>"></td>
+                                        </tr>
+                                         <tr>
+                                          <td><label>Pendidikan</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="pendidikan" size="70" class="form-control" value="<?php echo $row['pendidikan']?>"></td>
+                                        </tr>
+                                         <tr>
+                                          <td><label>Pekerjaan</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="pekerjaan" size="70" class="form-control" value="<?php echo $row['pekerjaan']?>"></td>
+                                        </tr>
+                                         <tr>
+                                          <td><label>Alamat</label></td>
+                                          <td>:</td>
+                                          <td><textarea name="alamat" size="70" class="form-control" value="<?php echo $row['alamat']?>" ></textarea></td>
+                                        </tr>
+                                         <tr>
+                                          <td><label>No Handphone</label></td>
+                                          <td>:</td>
+                                          <td><input type="text" name="no_hp" size="70" class="form-control" value="<?php echo $row['no_hp']?>"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="btn btn-primary" name="submit" type="submit" value="Edit" />
+                                            </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>   
+                                    </form>
+                                    <?php }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/plugins/pace/pace.js"></script>
+    <script src="assets/scripts/siminta.js"></script>
+    <!-- Page-Level Plugin Scripts-->
+    <script src="assets/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/plugins/morris/morris.js"></script>
+    <script src="assets/scripts/dashboard-demo.js"></script>
+
+</body>
+</html>

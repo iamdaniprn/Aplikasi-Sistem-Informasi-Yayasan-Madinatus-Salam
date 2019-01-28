@@ -1,0 +1,11 @@
+.login{
+	min-height: 300px;
+	border: 1px solid black;
+	padding-top: 10px;
+	margin-top: 100px;
+	position: absolute;
+	
+}
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+}
